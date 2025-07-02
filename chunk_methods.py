@@ -23,15 +23,7 @@ def extract_chunks_to_excel(chapter_name, chunks):
     df = pd.DataFrame({
         'ID': range(1, len(chunks) + 1),
         'Chunk': chunks,
-        'Frodo': "Neutral",
-        'Sam': "Neutral",
-        'Gandalf': "Neutral",
-        'Aragorn': "Neutral",
-        'Merry': "Neutral",
-        'Pippin': "Neutral",
-        'Legolas': "Neutral",
-        'Gimli': "Neutral",
-        'Boromir': "Neutral",
+        'Fellowship': "Neutral"
     })
 
     # Save to Excel
