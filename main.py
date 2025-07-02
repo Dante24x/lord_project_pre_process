@@ -1,14 +1,11 @@
 import chunk_methods
-import pdf_methods
+import labeled_dataset_sampling
 
-# Convert the pdf to txt by chapter and then to excel
-path = "fellowship.pdf"
+# The whole process from pdf to xlsx files with unprocessed chunks without labeling
+chunk_methods.create_txt_and_excel_for_each_chapter()
 
-chapters = pdf_methods.get_chapters_from_pdf(path)
-
-pdf_methods.write_chapters_on_txt_files(chapters)
-
-chunk_methods.get_excel_files(chapters)
+# After the manual labeling and annotating process, we sample the Full Dataset
+labeled_dataset_sampling.create_fellowship_sample()
 
 
 

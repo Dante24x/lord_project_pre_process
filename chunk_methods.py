@@ -6,6 +6,19 @@ from sklearn.metrics.pairwise import cosine_similarity
 from langchain.text_splitter import SpacyTextSplitter
 import pandas as pd
 
+import pdf_methods
+
+
+def create_txt_and_excel_for_each_chapter():
+    # Convert the pdf to txt by chapter and then to excel
+    path = "fellowship.pdf"
+
+    chapters = pdf_methods.get_chapters_from_pdf(path)
+
+    pdf_methods.write_chapters_on_txt_files(chapters)
+
+    get_excel_files(chapters)
+
 
 # Get excel for each chapter
 def get_excel_files(chapters):
@@ -19,7 +32,7 @@ def get_excel_files(chapters):
 
 
 def extract_chunks_to_excel(chapter_name, chunks):
-    # Create a DataFrame with columns for Id, Chunk and Characters
+    # Create a DataFrame with columns for Id, Chunk and The Fellowship
     df = pd.DataFrame({
         'ID': range(1, len(chunks) + 1),
         'Chunk': chunks,
