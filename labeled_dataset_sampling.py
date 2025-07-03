@@ -7,7 +7,7 @@ def create_fellowship_sample():
 
     # Filter by label
     # Keep all the possitive rows because they are the smallest number
-    positive_rows = df[df['Fellowship'] == 'Possitive']
+    positive_rows = df[df['Fellowship'] == 'Positive']
     # Because Negative are over twice the size of Positive (380 > 151 ) we keep a little bigger sample from the
     # positive chunks something like 172
     negative_rows = df[df['Fellowship'] == 'Negative'].sample(n=172, random_state=42)
